@@ -1,11 +1,11 @@
 Summary:	X11 Base library
 Name:		xorg-libX11
-Version:	1.5.0
-Release:	2
+Version:	1.6.0
+Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
-# Source0-md5:	78b4b3bab4acbdf0abcfca30a8c70cc6
+# Source0-md5:	f7c7a614f5c609e759dadb99436eb9c1
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -62,13 +62,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog README
 %dir %{_datadir}/X11
-%dir %{_libdir}/X11
 %attr(755,root,root) %ghost %{_libdir}/libX11-xcb.so.?
 %attr(755,root,root) %ghost %{_libdir}/libX11.so.?
 %attr(755,root,root) %{_libdir}/libX11-xcb.so.*.*.*
 %attr(755,root,root) %{_libdir}/libX11.so.*.*.*
 %{_datadir}/X11/XErrorDB
-%{_libdir}/X11/Xcms.txt
+%{_datadir}/X11/Xcms.txt
 
 %dir %{_datadir}/X11/locale
 %{_datadir}/X11/locale/C
