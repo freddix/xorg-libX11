@@ -1,11 +1,11 @@
 Summary:	X11 Base library
 Name:		xorg-libX11
-Version:	1.6.1
+Version:	1.6.2
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
-# Source0-md5:	bc5fc459ec25a50c5a7e27035b89e579
+# Source0-md5:	c35d6ad95b06635a524579e88622fdb5
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
