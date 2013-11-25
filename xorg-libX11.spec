@@ -1,7 +1,7 @@
 Summary:	X11 Base library
 Name:		xorg-libX11
 Version:	1.6.2
-Release:	1
+Release:	3
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
@@ -32,6 +32,10 @@ use libX11.
 
 %prep
 %setup -qn libX11-%{version}
+
+# support __libmansuffix__ and __filemansuffix__ with "x" suffix (per FHS 2.3)
+%{__sed} -i -e 's,\.so man__libmansuffix__/,.so man3/,' \
+            -e 's,\.so man__filemansuffix__/,.so man5/,' man/*.man
 
 %build
 %{__libtoolize}
@@ -126,8 +130,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libX11-xcb.so
 %attr(755,root,root) %{_libdir}/libX11.so
-%{_libdir}/libX11-xcb.la
-%{_libdir}/libX11.la
 %{_includedir}/X11/*.h
 %{_pkgconfigdir}/x11-xcb.pc
 %{_pkgconfigdir}/x11.pc
