@@ -1,12 +1,12 @@
 # based on PLD Linux spec git://git.pld-linux.org/packages/xorg-lib-libX11.git
 Summary:	X11 Base library
 Name:		xorg-libX11
-Version:	1.6.2
-Release:	4
+Version:	1.6.3
+Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
-# Source0-md5:	c35d6ad95b06635a524579e88622fdb5
+# Source0-md5:	2e36b73f8a42143142dda8129f02e4e0
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -56,6 +56,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgconfigdir=%{_pkgconfigdir}
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
